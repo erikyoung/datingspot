@@ -10,6 +10,7 @@
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top:10px;
   margin-bottom:15px;
+  box-shadow: 0px 3px 8px #2a2a2a;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,6 +35,32 @@ body {
   font-weight: 600;
   letter-spacing: -0.3px;
 }
+
+
+.clr {
+  clear:both;
+}
+
+.hero {
+  background: url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:370px;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+  margin:0;
+}
+
+.headline {
+  text-align: right;
+  margin-right: 30px;
+}
+
+
 
 
 
