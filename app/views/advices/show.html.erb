@@ -3,3 +3,8 @@
   <h5 class="text-center"><%= @advice.created_at.strftime('%b %d, %Y') %></h5>
   <div><%= raw @advice.body %></div>
 </div>
+
+
+
+ <%= link_to 'Edit', edit_advice_path(@advice), class: 'btn btn-primary' %> |
+ <%= link_to 'Destroy', advice_path(@advice), method: :delete, data: {confirm: 'Are you sure you wanna do this?'}, class: 'btn btn-danger' %>

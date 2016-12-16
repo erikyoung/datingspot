@@ -1,20 +1,24 @@
 <br />
-
+<div class="container">
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-<h1 class="text-center">Learn Something Today</h1>
-
-  <% @advices.each do |advice| %>
-    
+<% @advices.each do |advice| %>
+    <div class="col-xs-12">
       <div class="text-center">
         <h2><%= advice.title %></h2>
-        <h6><%= advice.body %></h6>
+        <h6><%= advice.created_at.strftime('%b %d, %Y') %></h6>
+      </div>
+
+      <div>
+        <%= raw(advice.body).truncate(358) %>
       </div>
 
       <div class="text-center">
-        <%= link_to "READ MORE", advice_path(advice) %>
+        <%= link_to "READ MORE", post_advice(advice) %>
       </div>
       <br>
+    </div>
     <% end %>
-    
   </div>
+</div>
+
 
