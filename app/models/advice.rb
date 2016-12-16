@@ -2,6 +2,9 @@ class Advice < ActiveRecord::Base
 has_many :advices
 
 
-validates_presence_of :body, :title 
+
+
+validates :title, presence: true, length: {maximum: 140}
+validates :body, presence: true
 
 end

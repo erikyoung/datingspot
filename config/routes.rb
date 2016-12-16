@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root 'spots#index'
 
   resources :spots
-  resources :advices
+  resources :advices 
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

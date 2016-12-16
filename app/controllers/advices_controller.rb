@@ -2,7 +2,9 @@ class AdvicesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_post, only: [:edit, :update, :show, :delete]
 
-
+  def index
+    @advices = Advice.all
+  end
 
 
   def new
@@ -10,7 +12,8 @@ class AdvicesController < ApplicationController
   end
 
   def create
-    @advice = Advice.new
+    @advice = Advice.new(advice_params)
+    redirect_to advice_path(@advice)
   end
   
 

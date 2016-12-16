@@ -17,8 +17,14 @@
       </div>
       <br>
     </div>
+    <% if admin_signed_in? %>
+        <%= link_to "Show", advice_path(advice), class: "btn btn-primary" %>
+        <%= link_to "Edit", edit_advice_path(advice), class: "btn btn-default" %>
+        <%= link_to "Delete", advice_path(post), class: "btn btn-danger", data: {:confirm => "Are you sure?"}, method: :delete %>
     <% end %>
+    <hr />
   </div>
+  <% end %>
 </div>
 
 
