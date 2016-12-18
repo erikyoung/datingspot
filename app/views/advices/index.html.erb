@@ -6,7 +6,12 @@
         <h6 class="date"><%= advice.created_at.strftime('%b %d, %Y') %></h6>
 
       </div>
+
    
+   <%= link_to 'Add Some Advice', new_advice_path(@advice), class: 'btn btn-warning pull-left' %>
+   
+
+  <br class="clr">
    
     <% end %>
   

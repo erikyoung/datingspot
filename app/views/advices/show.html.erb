@@ -5,10 +5,11 @@
     <% if user_signed_in? %>
     | <%= link_to 'Edit', edit_advice_path(@advice) %> |
       <%= link_to 'Delete', advice_path(@advice), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+    
   </p>
-  <p class="body"><%=  @advice.body %></p>
+
   
+ <% end %> 
 </div>
 
 
