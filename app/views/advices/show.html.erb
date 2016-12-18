@@ -1,8 +1,17 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h2 class="text-center"><%= @advice.title %></h2>
-  <h5 class="text-center"><%= @advice.created_at.strftime('%b %d, %Y') %></h5>
-  <div><%= raw @advice.body %></div>
+  <h1 class="text-center"><%= @advice.title %></h1>
+  <p class="date">
+    Submitted <%= time_ago_in_words(@advice.created_at) %> Ago
+    <% if user_signed_in? %>
+    | <%= link_to 'Edit', edit_advice_path(@advice) %> |
+      <%= link_to 'Delete', advice_path(@advice), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </p>
+  <p class="body"><%=  @advice.body %></p>
+  
 </div>
+
+
 
 
 

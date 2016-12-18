@@ -1,30 +1,16 @@
 <br />
-<div class="container">
+
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-<% @advices.each do |advice| %>
-    <div class="col-xs-12">
-      <div class="text-center">
-        <h2><%= advice.title %></h2>
-        <h6><%= advice.created_at.strftime('%b %d, %Y') %></h6>
-      </div>
+  <% @advices.each do |advice| %>
+        <h2 class="title"><%= link_to advice.title, advice %></h2>
+        <h6 class="date"><%= advice.created_at.strftime('%b %d, %Y') %></h6>
 
-      <div>
-        <%= raw(advice.body).truncate(358) %>
       </div>
-
-      <div class="text-center">
-        <%= link_to "READ MORE", post_advice(advice) %>
-      </div>
-      <br>
-    </div>
-    <% if admin_signed_in? %>
-        <%= link_to "Show", advice_path(advice), class: "btn btn-primary" %>
-        <%= link_to "Edit", edit_advice_path(advice), class: "btn btn-default" %>
-        <%= link_to "Delete", advice_path(post), class: "btn btn-danger", data: {:confirm => "Are you sure?"}, method: :delete %>
+   
+   
     <% end %>
-    <hr />
-  </div>
-  <% end %>
-</div>
+  
+  
+
 
 

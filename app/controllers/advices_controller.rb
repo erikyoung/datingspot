@@ -1,9 +1,9 @@
 class AdvicesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_post, only: [:edit, :update, :show, :delete]
+  before_action :advice_find, only: [:edit, :update, :show, :delete]
 
   def index
-    @advices = Advice.all
+    @advices = Advice.all.order('created_at DESC')
   end
 
 
@@ -13,7 +13,8 @@ class AdvicesController < ApplicationController
 
   def create
     @advice = Advice.new(advice_params)
-    redirect_to advice_path(@advice)
+     
+      redirect_to @advice
   end
   
 
@@ -33,10 +34,7 @@ private
     params.require(:advice).permit(:title, :body)
   end
 
-  def find_advice
+  def advice_find
     @advice = Advice.find(params[:id])
   end 
-
-  
-
 end
