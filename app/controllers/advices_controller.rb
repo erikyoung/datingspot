@@ -9,23 +9,23 @@ class AdvicesController < ApplicationController
 
   def new
     @advice = Advice.new
+
   end
 
   def create
     @advice = Advice.new(advice_params)
-     
-      redirect_to @advice
+    redirect_to advices_path
   end
   
 
   def edit
+    @advice.Advice.find(params[:id])
   end
 
   
   def show
     @advice = Advice.find(params[:id])
   end
-
   
 
 private
