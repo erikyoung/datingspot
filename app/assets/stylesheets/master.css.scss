@@ -19,8 +19,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: url('/assets/concrete_seamless.png');
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+background-color:white;
+background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%),
+linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+background-size:50px 50px;
+
+font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
 }
 
 .navbar.navbar-inverse {
@@ -68,9 +73,11 @@ h1, h2, h3, h4, h5, h6, .navbar {
   text-align: center;
 }
 
-.btn btn-warning  {
-  margin-left: 50px;
+.whoa {
+  margin-left: 110px;
 }
+
+
 
 
 

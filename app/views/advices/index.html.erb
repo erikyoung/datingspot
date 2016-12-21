@@ -2,13 +2,14 @@
 
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <% @advices.each do |advice| %>
-        <h2 class="title"><%= link_to advice.title, advice %></h2>
+        <h2 class="title"><%= link_to advice.title, advice_path(advice) %></h2>
         <h6 class="date"><%= advice.created_at.strftime('%b %d, %Y') %></h6>
 
       </div>
 
-   
-   <%= link_to 'Add Some Advice', new_advice_path(@advice), class: 'btn btn-warning pull-left' %>
+   <div class="whoa">
+    <%= link_to 'Add Some Advice', new_advice_path(@advice), class: 'btn btn-warning pull-left' %>
+   </div>
 
   
   <br class="clr">
