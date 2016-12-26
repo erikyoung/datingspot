@@ -17,3 +17,7 @@
 
   <hr />
 <% end %>
+
+<div class="pagination col-xs-11 pull-right">
+    <p><%= will_paginate @advices, renderer: BootstrapPagination::Rails %></p>
+</div>

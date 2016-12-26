@@ -18,11 +18,20 @@ class AdvicesController < ApplicationController
   
   end
 end
-  
-  
 
   def edit
     @advice.Advice.find(params[:id])
+  end
+
+  def update
+    @advice = Advice.find(params[:id])
+
+    if @advice.update(params[:advice].permit(:title, :body))
+      redirect_to @advice
+
+    else
+      render 'edit'
+    end 
   end
 
   
