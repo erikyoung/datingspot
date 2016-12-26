@@ -5,6 +5,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap', '~> 1.0'
 gem 'ckeditor', '~> 4.1'
 gem 'devise', '>= 3.2.4'
 gem 'rails_12factor', group: :production

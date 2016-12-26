@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.all
+    @spots = Spot.all.paginate(page: params[:page], per_page: 3)
   end
 
   def new
