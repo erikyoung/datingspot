@@ -13,11 +13,9 @@ class AdvicesController < ApplicationController
   end
 
   def create
-    @advice = Advice.new(advice_params)
-    if @advice.valid?
+    @advice = Advice.create(advice_params)
     redirect_to advices_path
-  else
-    return render :new, status: :unprocessable_entity
+  
   end
 end
   
@@ -42,4 +40,4 @@ private
   def advice_find
     @advice = Advice.find(params[:id])
   end 
-end
+
