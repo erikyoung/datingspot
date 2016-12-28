@@ -13,6 +13,11 @@
     <h1><%= link_to spot.name, spot_path(spot) %></h1><br />
     <i><%= spot.address %></i><br /><br />
     <p><%= spot.description %></p><br />
+
+
+    <% if spot.user.present? %>
+      <small><%= spot.user.email %></small>
+    <% end %>
   </div>
 
   <hr />

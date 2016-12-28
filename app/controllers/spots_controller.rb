@@ -1,4 +1,6 @@
 class SpotsController < ApplicationController
+before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @spots = Spot.all.paginate(page: params[:page], per_page: 3)
   end
@@ -8,8 +10,12 @@ class SpotsController < ApplicationController
   end
 
   def create
-   Spot.create(spot_params)
-   redirect_to root_path
+   @spot = current_user.spots.create(spot_params)
+  if @spot.valid?
+    redirect_to root_path
+  else
+    render :new, status: :unprocessable_entity
+  end
   end
 
   def show
@@ -40,6 +46,7 @@ end
     @spot.destroy
     redirect_to root_path
   end
+
   private
 
   def spot_params
