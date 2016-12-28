@@ -8,8 +8,8 @@ class SpotsController < ApplicationController
   end
 
   def create
-    Spot.create(spot_params)
-    redirect_to root_path
+   Spot.create(spot_params)
+   redirect_to root_path
   end
 
   def show
@@ -22,9 +22,18 @@ class SpotsController < ApplicationController
 
   def update
     @spot = Spot.find(params[:id])
+
+    if @spot.user != current_user
+      return render text: 'Not Allowed', status: :forbidden
+    end
+
     @spot.update_attributes(spot_params)
+    if @spot.valid?
     redirect_to root_path
+  else
+    render :edit, status: :unprocessable_entity
   end
+end
 
   def destroy
     @spot = Spot.find(params[:id])
