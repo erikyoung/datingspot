@@ -10,7 +10,7 @@
 
 <% @spots.each do |spot| %>
   <div class="booyah-box col-xs-10 col-xs-offset-1">
-    <h1><%= spot.name %></h1><br />
+    <h1><%= link_to spot.name, spot_path(spot) %></h1><br />
     <i><%= spot.address %></i><br /><br />
     <p><%= spot.description %></p><br />
   </div>
