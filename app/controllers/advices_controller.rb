@@ -26,13 +26,17 @@ end
   def update
     @advice = Advice.find(params[:id])
 
-    if @advice.update(params[:advice].permit(:title, :body))
-      redirect_to @advice
-
-    else
-      render 'edit'
-    end 
+    if @advice.user != current_user
+    return render text: 'Not Allowed', status: :forbidden
   end
+
+  @advice.update_attributes(advice_params)
+  if @advice.valid?
+    redirect_to advice_path
+  else
+    render :edit, status: :unprocessable_entity
+  end
+end
 
   
   def show

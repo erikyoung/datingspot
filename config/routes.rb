@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :controllers
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   root 'spots#index'
 
-  resources :spots
-  resources :advices 
+  resources :spots do
+  end
+  resources :advices do
+  end
+
   
 
 

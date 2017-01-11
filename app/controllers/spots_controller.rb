@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-before_action :authenticate_user!, only: [:new, :create]
+before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @spots = Spot.all.paginate(page: params[:page], per_page: 3)
