@@ -17,26 +17,22 @@ class AdvicesController < ApplicationController
     redirect_to advices_path
   
   end
-end
+
 
   def edit
-    @advice.Advice.find(params[:id])
+    @advice = Advice.find(params[:id])
   end
 
   def update
     @advice = Advice.find(params[:id])
 
-    if @advice.user != current_user
-    return render text: 'Not Allowed', status: :forbidden
-  end
-
-  @advice.update_attributes(advice_params)
-  if @advice.valid?
-    redirect_to advice_path
+   if @advice.update(params[:advice].permit(:title, :body))
+      redirect_to @advice
   else
-    render :edit, status: :unprocessable_entity
+    render 'edit'
   end
 end
+
 
   
   def show
@@ -53,4 +49,6 @@ private
   def advice_find
     @advice = Advice.find(params[:id])
   end 
+end
+
 

@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'spots#index'
 
-  resources :spots do
-  end
-  resources :advices do
-  end
+  resources :spots 
+  resources :advices 
+
 
   
 

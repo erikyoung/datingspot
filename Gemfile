@@ -11,7 +11,7 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap', '~> 1.0'
 gem 'ckeditor', '~> 4.1'
 gem 'devise', '>= 3.2.4'
-gem 'rails_12factor', group: :production do
+gem 'rails_12factor', group: :production 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
@@ -47,6 +47,5 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+
 
